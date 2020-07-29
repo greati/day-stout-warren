@@ -51,6 +51,6 @@ vineToTree (t, n) = fst $ until nLeqThanOne compressHalf (leftCompressed, n - le
 dsw :: Ord a => BinTree a -> BinTree a
 dsw = vineToTree . treeToVine
 
-m1 = foldr insert BinEmpty [10,9,11,8,12,7,13,6,14,5,15,4,16,3,17,2,18,1,20]
-m2 = foldr insert BinEmpty [10,9,8,7,6,5,4]
-m3 = foldr insert BinEmpty (take 5001 [1..])
+-- Examples
+m1 = BinNode (BinEmpty) 20 (BinNode (BinNode BinEmpty 6 (BinNode BinEmpty 18 BinEmpty)) 10 (BinNode BinEmpty 9 BinEmpty)) 
+m2 = foldr insert BinEmpty [8,7,6,5,4,3,2,1]
