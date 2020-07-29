@@ -11,10 +11,6 @@ instance (Ord a, Show a, Eq a) => Show (BinTree a) where
     show BinEmpty = []
     show h = (drawVerticalTree . toStringDataTree) $ h
 
-size :: Ord a => BinTree a -> Integer
-size BinEmpty = 0
-size (BinNode l _ r) = 1 + size l + size r
-
 insert :: Ord a => a -> BinTree a -> BinTree a
 insert x BinEmpty = BinNode BinEmpty x BinEmpty
 insert x (BinNode l y r)
